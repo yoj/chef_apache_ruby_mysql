@@ -4,14 +4,21 @@
       {
         "user": "vagrant",
         "rubies": ["2.1.0"],
-        "global": "2.1.0"
+        "global": "2.1.0",
+        "gems": {
+          "2.1.0": [
+            {"name": "bundler"},
+            {"name": "passenger"},
+            {"name": "rails"}
+          ]
+        }
       }
     ]
   },
   "run_list": [
-    "recipe[apache]",
-    "recipe[mysql]",
     "recipe[ruby_build]",
-    "recipe[rbenv::user]"
+    "recipe[rbenv::user]",
+    "recipe[apache]",
+    "recipe[mysql]"
   ]
 }
